@@ -1,0 +1,33 @@
+From 59017f0bb0acdc5ab86cc5b40accf5f1e9c35b53 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=B8ren=20Sandmann=20Pedersen?= <ssp@redhat.com>
+Date: Thu, 26 Sep 2013 12:20:29 -0400
+Subject: [PATCH 2/2] More man page fixes
+
+* Write --help, not -help.
+
+* Add --max-samples to synopsis
+---
+ doc/xrestop.1 | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/doc/xrestop.1 b/doc/xrestop.1
+index 5eb2565..f9c6d77 100644
+--- a/doc/xrestop.1
++++ b/doc/xrestop.1
+@@ -2,11 +2,10 @@
+ .SH NAME
+ xrestop \- monitor server resources used by X11 clients
+ .SH SYNOPSIS
+-.B xrestop
+-\-help
++.B xrestop \-\-help
+ .br
+ .B xrestop
+-[ \fB\-display\fP display ] [ \fB\-\-batch\fP ] [ \fB\-\-delay\-time\fP seconds ]
++[ \fB\-\-display\fP display ] [ \fB\-\-batch\fP ] [ \fB\-\-delay\-time\fP seconds ] [ \fB\-\-max-samples\fP count ]
+ .SH DESCRIPTION
+ Xrestop uses the X\-Resource extension to provide 'top'\-like statistics of 
+ each connected X11 client's server\-side resource usage.  It is intended 
+-- 
+1.8.3.1
+

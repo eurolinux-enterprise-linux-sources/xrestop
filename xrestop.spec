@@ -1,7 +1,7 @@
 Summary: X Resource Monitor
 Name: xrestop
 Version: 0.4
-Release: 11%{?dist}
+Release: 14%{?dist}
 License: GPLv2+
 Group: Development/Tools
 URL: http://www.freedesktop.org/Software/xrestop
@@ -10,6 +10,8 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 BuildRequires: ncurses-devel libXres-devel libXext-devel libX11-devel
 BuildRequires: libXau-devel
+Patch0: 0001-man-page-Change-dt-to-t.patch
+Patch1: 0002-More-man-page-fixes.patch
 
 %description
 A utility to monitor application usage of X resources in the X Server, and
@@ -18,6 +20,8 @@ for tracking down application X resource usage leaks.
 
 %prep
 %setup -q
+%patch0 -p1 -b .man-pages0
+%patch1 -p1 -b .man-pages1
 
 %build
 %configure
@@ -39,6 +43,15 @@ rm -rf "$RPM_BUILD_ROOT"
 %{_mandir}/man1/xrestop.1*
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.4-14
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.4-13
+- Mass rebuild 2013-12-27
+
+* Tue Dec 17 2013 Soren Sandmann <ssp@redhat.com> - 0.4-12
+- Man page fixes (#948901)
+
 * Fri Feb 15 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.4-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 

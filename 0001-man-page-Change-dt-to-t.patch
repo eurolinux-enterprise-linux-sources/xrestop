@@ -1,0 +1,26 @@
+From bd2a232212676cd2bbca49d2bdae9687c6dbd8a7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=B8ren=20Sandmann=20Pedersen?= <ssp@redhat.com>
+Date: Thu, 26 Sep 2013 12:05:21 -0400
+Subject: [PATCH 1/2] man page: Change -dt to -t
+
+The option -dt doesn't exist in the code; it's called -t.
+---
+ doc/xrestop.1 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/xrestop.1 b/doc/xrestop.1
+index 4cbaf2f..5eb2565 100644
+--- a/doc/xrestop.1
++++ b/doc/xrestop.1
+@@ -20,7 +20,7 @@ Show usage.
+ \fB\-\-display, \-d\fP <display>
+ Specify X11 display to monitor.
+ .TP
+-\fB\-\-delay-time, \-dt\fP <seconds>
++\fB\-\-delay-time, \-t\fP <seconds>
+ Time in seconds between taking samples. Default is 2 seconds. 
+ .TP
+ \fB\-\-batch, \-b\fP
+-- 
+1.8.3.1
+
